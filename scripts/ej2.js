@@ -1,4 +1,4 @@
-// Credits for Noelia Lopez, code taken from her repo.
+  // Credits for Noelia Lopez, code taken from her repo.
 // Interesting way of using D3 selection groups to sort of "concat" in a line all 4 elements created
 function ej2() {
   clearContent();

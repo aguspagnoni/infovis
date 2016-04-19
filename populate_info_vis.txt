@@ -1,0 +1,3 @@
+create table "personas" (PERSONA_REF_ID integer, HOGAR_REF_ID integer, P01 integer, P02 integer, P03 integer, P05 integer, P06 integer, P07 integer, P12 integer, EDADAGRU integer, EDADQUI integer, P08 integer, P09 integer, P10 integer, CONDACT integer);
+
+COPY personas FROM '/Users/agustinpagnoni/Downloads/CNPHyV-2010.csv/PERSONA_sin_header.csv' DELIMITER ';' CSV;
