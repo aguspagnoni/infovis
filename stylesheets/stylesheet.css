@@ -253,3 +253,24 @@ a {
 @media screen and (max-width: 42em) {
   .site-footer {
     font-size: 0.9rem; } }
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 200px;
+    height: 80px;
+    padding: 10px;
+    font: 12px sans-serif;
+    color: black;
+    background: #79BD8F;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.tooltip > hr {
+  width: 80%;
+}
