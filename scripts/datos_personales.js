@@ -96,8 +96,8 @@ function finances() {
     //             .attr("width", width / dataset.length - barPadding)
     //             .style("height", function(d) {
     //               return scale(net(d))
-    //             })
-    //             ;
+    //             });
+    //
 
   function net(d) { return d.amount > 0 ? d.amount : d.income }
   function hashToArray(h) {
