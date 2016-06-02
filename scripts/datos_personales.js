@@ -1,11 +1,11 @@
 function finances() {
   clearContent();
-  putTitle('Personal Financial Data');
+  putTitle('Data personal financiera - Caja de Ahorro - 6 meses');
 
   var dataset = [];
 
-  var width = 1200;
-  var height = 1000;
+  var width = $(window).width();
+  var height = $(window).height()/2;
   var barPadding = 2;
 
   $('tr').each(function(i) {
@@ -32,8 +32,13 @@ function finances() {
     }
   });
 
+
   incomes = hashToArray(incomes);
   spent = hashToArray(spent);
+
+  spent = spent.sort(function (a,b) {
+    return d3.descending(a.value, b.value);
+  });
 
 
 // Define the div for the tooltip
@@ -45,9 +50,11 @@ function finances() {
                   .domain([1, maxOfArray(dataset.map(function(d) { return d.amount || d.income } )) / 4])
                   .range([0, 500]);
 
+  var green_to_red = ["#d73027", "#f46d43", "#fdae61", "#fee08b", "#d9ef8b", "#a6d96a", "#66bd63", "#1a9850"];
+  var red_to_green = green_to_red.reverse();
   var color = d3.scale.quantile()
-              .domain([0, 10, 50, 100, 1000, 5000, 10000, 15000])
-              .range(["#80EF91", "#92D883", "#A4C276", "#B6AC69", "#C8955C", "#DA7F4F", "#EC6942", "#FF5335"]);
+              .domain([0, 10, 50, 100, 1000, 10000, 30000, 50000])
+              .range(red_to_green);
 
   var svgContainer = d3.select("#ej-ctn").append("svg")
                                            .attr("width", width)
@@ -59,9 +66,10 @@ function finances() {
               .enter()
               .append('circle')
               .attr("fill", function(d) { return color(d.value) })
-              .attr("r", function(d) { return Math.sqrt(d.value); })
+              .attr("r", function(d) { return Math.sqrt(d.value)/2; })
               .attr("cx", function(d) { return Math.floor(Math.random() * width); })
               .attr("cy", function(d) { return Math.floor(Math.random() * height); })
+              .style("stroke", "white")
               .on("mouseover", function(d) {
                 div.transition()
                     .duration(200)

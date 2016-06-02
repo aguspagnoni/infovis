@@ -7,3 +7,9 @@ function putTitle(title) {
       .append('h2')
       .text(title);
 }
+
+function loadHtml(file, container) {
+  $.get(file, function(data) {
+    $(container).html(data);
+  })
+}

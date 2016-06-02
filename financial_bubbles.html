@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Galicia's personal Financial data</title>
+  <script src="https://code.jquery.com/jquery-2.2.1.min.js" charset="utf-8"></script>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="stylesheets/overrides.css">
+  <script type="text/javascript" src="scripts/utils.js"></script>
+  <script type="text/javascript" src="scripts/datos_personales.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js" charset="utf-8"></script>
+</head>
+<body>
+  <section class="page-header">
+    <h1 class="project-name">Resumen Peronsal - Banco Galicia</h1>
+    <h3>by Agustin Pagnoni</h3>
+  </section>
+<div class="exercises">
+  <a class="btn btn-background" onclick="finances()" style="margin-top: 15px;"> Dibujar</a>
+</div>
+<div id='ej-ctn' style="text-align: center;"></div>
+<div id='included-data' style="display: none;">
+<script type="text/javascript">loadHtml('datos.html', "#included-data")</script>
+</body>
+</html>
